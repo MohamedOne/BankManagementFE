@@ -19,6 +19,12 @@ const AccountMenu = () => {
     }
 
 
+    const grabTransactionOfSingleDay = async() => {
+        const data = await apiCore.grabUserTransactionsByDay(1968845249, "2022-01-30")
+        console.log(data)
+    }
+
+
     return (
         <>
         <>
@@ -32,7 +38,7 @@ const AccountMenu = () => {
                 <div className="view-mini-statement">
                     View Mini Statement | (Last Five Transactions)
                 </div>
-                <div className="view-statement-date">
+                <div className="view-statement-date" onClick={grabTransactionOfSingleDay}>
                     View Statement By Date
                 </div>
                 <div className="withdrawal-deposit">

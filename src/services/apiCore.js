@@ -28,9 +28,23 @@ const grabUserAccounts = (customerID) => {
                 .catch(err => console.log(err))
 }
 
+const grabLastFiveTransactions = (transactionAccountNumber) => {
+    return axios.get(`${BASE_URL}/transactions/recents/${transactionAccountNumber}`)
+                .then(resp => resp.data)
+                .catch(err => console.log(err))
+}
+
+const grabUserTransactionsByDay = (transactionAccountNumber, date) => {
+    return axios.get(`${BASE_URL}/transactions/day/${transactionAccountNumber}/${date}`)
+                .then(resp => resp.data)
+                .catch(err => console.log(err))
+}
+
 export const apiCore = {
     queryByPAN,
     getAllAccountsByCustomerID,
     postNewCustomer,
-    grabUserAccounts
+    grabUserAccounts,
+    grabLastFiveTransactions,
+    grabUserTransactionsByDay
 }
