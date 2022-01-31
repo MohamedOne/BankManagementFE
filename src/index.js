@@ -3,10 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Login from './components/Login';
+import ManagerMenu from './components/ManagerMenu';
+import AccountMenu from './components/AccountMenu';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+
+    <Switch>
+      <Route path="/account">
+        <AccountMenu />
+      </Route>
+      <Route path="/manager">
+        <ManagerMenu />
+      </Route>
+      <Route path="/">
+        <Login />
+      </Route>
+    </Switch>
+    </BrowserRouter>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

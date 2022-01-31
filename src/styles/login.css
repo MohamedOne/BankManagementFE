@@ -1,0 +1,39 @@
+.encasing-div {
+
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+input[type=number], input[type=password] {
+    width: 30%;
+    height: 30px;
+    padding-bottom: 5px;
+    margin-left: 3px;
+    margin-top: 4px;
+    text-decoration: none;
+}
+
+input[type=submit] {
+    width: 30.4%;
+    height: 30px;
+    margin-left: 3px;
+    margin-top: 4px;
+    background-color: green;
+    color: #fff;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

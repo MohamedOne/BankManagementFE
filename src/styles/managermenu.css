@@ -1,0 +1,45 @@
+.manager-menu-title {
+    text-align: center;
+}
+
+.query-for-accounts, .create-new-account {
+    text-align: center;
+    border: 1px solid #000;
+    width: 30%;
+    margin: 4px auto;
+    cursor: pointer;
+}
+.query-for-accounts {
+    height: 50px;
+
+}
+
+
+.query-for-accounts:hover,
+.create-new-account:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+.pan-input {
+    margin-left: 9px;
+}
+
+.submit-new-customer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    left: 35%;
+    top: 50%;
+}
+
+input[type=text] {
+    width: 30%;
+}
+
+input[type=submit] {
+    left: -35%;
+}
