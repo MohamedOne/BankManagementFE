@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { apiCore } from '../services/apiCore';
 import '../styles/accountsmenu.css';
 import AccountList from './AccountList';
@@ -8,6 +10,12 @@ const AccountMenu = () => {
     const[choice, setChoice] = useState(0)
 
     const[customerAccounts, setCustomerAccounts] = useState([])
+
+    const permAccountNumber = useSelector(state => state.permAccountNumber)
+
+    useEffect(() => {
+        console.log(permAccountNumber)
+    }, [])
 
     const grabUserAccounts = () => {
         const data = apiCore.grabUserAccounts(408601)
@@ -51,7 +59,7 @@ const AccountMenu = () => {
         </>
         {
             choice == 1 ?
-            customerAccounts.map(element => <AccountList props={element} />)
+            customerAccounts.map(element => <AccountList  props={element} />)
             :
             null
         }

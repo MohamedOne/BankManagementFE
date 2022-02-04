@@ -41,6 +41,8 @@ const ManagerMenu = () => {
 
     const handleNewCustomerSubmit = (e) => {
         e.preventDefault()
+        console.log(JSON.stringify(customerObject))
+
         const customerSubmitResponse = apiCore.postNewCustomer(customerObject)
         customerSubmitResponse.then(alert("New customer successfully created"))
                             .then(console.log(customerSubmitResponse))
