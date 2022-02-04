@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import '../styles/login.css';
 
 const Login = () => {
 
-    const navigate = useHistory();
-    const[username, setUsername] = useState("")
+    const navigate = useHistory()
+    const dispatch = useDispatch()
+    const[username, setUsername] = useState(0)
     const[password, setPassword] = useState("")
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        dispatch({
+            type: 'PUT_CID',
+            payload: username
+        })
         navigate.push('/account')
     }
 
@@ -23,8 +29,7 @@ const Login = () => {
                 <input 
                     type="number" 
                     className="username-input" 
-                    placeholder='Username'    
-                    value={username}
+                    placeholder='CustomerID' 
                     onChange={e => setUsername(e.target.value)}
                 />
                 <input 

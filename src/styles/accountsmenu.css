@@ -6,8 +6,16 @@
 
     margin: 10px auto;
     text-align: center;
-    border: 1px solid #000;
+    
     width: 30%;
+}
+
+.view-accts-div,
+.view-mini-statement,
+.view-statement-date,
+.withdrawal-deposit,
+.transfer {
+    border: 1px solid #000;
 }
 
 .view-accts-div:hover, 
@@ -17,4 +25,24 @@
 .transfer:hover {
     background-color: grey;
     cursor: pointer;
+}
+
+.withdraw-deposit {
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction-number {
+    position: relative;
+    left: 33%;
+}
+
+.transaction-amount {
+    position: relative;
+    left: 33%;
+}
+
+.withdraw-deposit-submit {
+    position: relative;
+    transform: translate(400px, 0%);
 }

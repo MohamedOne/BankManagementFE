@@ -6,14 +6,18 @@
     text-align: center;
     border: 1px solid #000;
     width: 30%;
+    height: auto;
     margin: 4px auto;
     cursor: pointer;
 }
 .query-for-accounts {
-    height: 50px;
+    height: 75px;
 
 }
 
+.submit-pan-query {
+    height: 50px;
+}
 
 .query-for-accounts:hover,
 .create-new-account:hover {
@@ -40,6 +44,11 @@ input[type=text] {
     width: 30%;
 }
 
+
 input[type=submit] {
     left: -35%;
+}
+
+.account-list-div {
+    margin-left: 700px;
 }

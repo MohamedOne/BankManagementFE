@@ -30,6 +30,59 @@ const postNewCustomer = (customerObject) => {
       })
 }
 
+const postNewAccount = (customerID, customerObject) => {
+    return fetch(`${BASE_URL}/accounts`, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify({
+            "customerID": customerID,
+            "customer" : customerObject
+        })
+    })
+}
+
+const postNewTransaction = (transactionObject) => {
+    return fetch(`${BASE_URL}/transactions`, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify({
+            "transactionAccountNumberFrom": transactionObject.accountNumber,
+            "transactionAmount": transactionObject.transactionAmount,
+            "transactionType": transactionObject.transactionType,
+            "transactionSubtype": transactionObject.transactionSubtype
+        })
+    })
+}
+
+const postNewTransfer = (transferObject) => {
+    return fetch(`${BASE_URL}/transactions/transfers`, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(transferObject)
+    })
+}
+
 const grabUserAccounts = (customerID) => {
     return axios.get(`${BASE_URL}/accounts/${customerID}`)
                 .then(resp => resp.data)
@@ -54,5 +107,8 @@ export const apiCore = {
     postNewCustomer,
     grabUserAccounts,
     grabLastFiveTransactions,
-    grabUserTransactionsByDay
+    grabUserTransactionsByDay,
+    postNewAccount,
+    postNewTransaction,
+    postNewTransfer
 }
